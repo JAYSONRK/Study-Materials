@@ -1,0 +1,42 @@
+Javascript
+
+Hoisting:
+Hoisting in JavaScript is a behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed. This means that regardless of where declarations appear in the code, they are treated as if they are declared at the top of their scope.
+
+Lexical Scoping:
+Lexical scoping is a mechanism used to determine the scope of variables in JavaScript. In lexical scoping, the scope of a variable is determined by its position within the code when it is defined. This means that a variable's scope is determined by where it is written in the source code. When a function is defined within another function, the inner function has access to the variables and parameters of the outer function. However, the outer function does not have access to the variables defined within the inner function. This is because the inner function's scope is nested within the outer function's scope.
+
+Scope Chain:
+The scope chain refers to the hierarchy of scopes in JavaScript. When a variable is referenced within a function, JavaScript looks for that variable first within the local scope of the function. If it doesn't find the variable there, it looks in the next outer scope, and so on, until it reaches the global scope. This chain of nested scopes is called the scope chain. Each function has access to variables defined within its own scope as well as in all outer scopes, following this chain.
+
+Closures:
+A closure is a combination of a function and the lexical environment within which that function was declared. Closures allow functions to access variables from an enclosing scope even after the outer function has finished executing. This means that a function "remembers" its lexical scope even when the function is executed outside that scope. Closures are often used to create private variables and to maintain state across multiple function calls.
+Difference between Lexical Scoping, Scope Chain, and Closures:
+
+Difference:
+Lexical scoping refers to how variable scope is determined based on the physical placement of code in the source.
+Scope chain refers to the order in which scopes are searched for a variable when it is referenced.
+Closures are a consequence of lexical scoping and the use of nested functions, allowing functions to retain access to variables from their lexical scope even after the outer function has finished executing.
+
+
+Synchronous Functions:
+Synchronous functions execute in a blocking manner. When a synchronous function is called, the execution of code waits for that function to complete before moving on to the next statement. This means that if a synchronous function takes a long time to execute, it will block the execution of subsequent code until it finishes. 
+
+Asynchronous Functions:
+Asynchronous functions, on the other hand, execute non-blockingly. When an asynchronous function is called, the execution of code continues immediately without waiting for that function to complete. Asynchronous functions typically involve operations that may take some time to complete, such as fetching data from a server, reading a file, or waiting for a timer to expire. To handle the results of asynchronous operations, JavaScript provides mechanisms such as callbacks, promises, and async/await.
+
+
+Event Loop:
+
+The event loop is a fundamental concept in JavaScript that governs the flow of execution in asynchronous code. JavaScript is a single-threaded language, meaning it can only execute one piece of code at a time. However, it also supports asynchronous operations, such as fetching data from a server, reading files, or waiting for user input, which can take time to complete. The event loop enables JavaScript to handle these asynchronous operations in a non-blocking manner.
+
+Here's how the event loop works:
+
+Call Stack:
+JavaScript maintains a call stack, which is a data structure that keeps track of the execution context of functions. When a function is called, it is added to the top of the call stack. As functions complete execution, they are removed from the stack.
+
+Task Queue:
+Alongside the call stack, JavaScript also has a task queue. Asynchronous operations, such as callbacks from timers, DOM events, or promises, are not executed immediately. Instead, they are placed in the task queue once they are completed.
+
+Event Loop:
+The event loop continuously checks if the call stack is empty. If the call stack is empty, it takes the first task from the task queue and pushes it onto the call stack, allowing it to be executed. This process repeats indefinitely, ensuring that asynchronous tasks are processed when the call stack is empty.

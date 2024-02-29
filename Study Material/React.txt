@@ -1,0 +1,44 @@
+React
+
+React Memo:
+Using memo will cause React to skip rendering a component if its props have not changed.
+export default memo(Todos);
+
+useEffect Hooks
+The useEffect Hook allows you to perform side effects in your components.
+useEffect(<function>, [dependency])
+
+useContext Hook
+React Context is a way to manage state globally.
+It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+
+useRef Hook
+The useRef Hook allows you to persist values between renders.
+It can be used to store a mutable value that does not cause a re-render when updated.
+It can be used to access a DOM element directly.
+
+useReducer Hook
+The useReducer Hook is similar to the useState Hook.
+It allows for custom state logic.
+If you find yourself keeping track of multiple pieces of state that rely on complex logic, useReducer may be useful.
+useReducer(<reducer>, <initialState>)
+
+useCallback Hook
+The React useCallback Hook returns a memoized callback function.
+This allows us to isolate resource intensive functions so that they will not automatically run on every render.
+The useCallback Hook only runs when one of its dependencies update.
+This can improve performance.
+
+
+useMemo Hook
+The React useMemo Hook returns a memoized value.
+The useMemo Hook only runs when one of its dependencies update.
+This can improve performance.
+
+The useMemo and useCallback Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function.
+
+
+Custom Hooks
+Hooks are reusable functions.
+When you have component logic that needs to be used by multiple components, we can extract that logic to a custom Hook.
+Custom Hooks start with "use". Example: useFetch.
